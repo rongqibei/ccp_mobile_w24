@@ -1,0 +1,363 @@
+/* Navigation */
+nav {
+    display: flex;
+    height: 50px;
+    padding: 10px 5vw;
+    align-items: center;
+    justify-content: flex-end;
+    /* box-sizing: border-box; */
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 0 2px 0;
+    
+}
+nav a {
+    text-decoration: none;
+    color: #666666; 
+    font-weight: 400;
+    padding: 10px 1.2vw;
+    font-size: 18px;
+}
+
+/* nav ul li:last-child > a {
+    padding-right: 0;
+} */
+
+nav ul li.current-page {
+    border-bottom: 3px solid #C67B93;
+}
+
+nav ul li.current-page a {
+    font-weight: bolder;
+}
+
+/* Skil to the main content */
+
+.skip-to-content-link {
+    position: absolute;
+    transform: translateY(-100%); /*moves the element vertically in the upward direction by 100% of the element's own height.*/
+    height: 40px;
+    padding: 10px;
+    transition: transform 0.3s;
+    background: #C7511F;
+    color: white;
+    font-weight: bold;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.skip-to-content-link:focus {
+    transform: translateY(0%) ; /*bring it back*/
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skip-to-content-link {
+        transition: none; /* removes transition for users who prefer reduced motion */
+    }
+}
+
+
+main {
+    font-family:Helvetica, Arial, sans-serif;
+}
+
+main p {
+    line-height: 1.3;
+}
+
+main ul {
+    list-style-type: disc; 
+    padding-left: 20px; 
+}
+
+main ol {
+    list-style-type: decimal; 
+    padding-left: 20px; 
+}
+
+
+.sub-pages {
+    color: #222222;
+    padding: 5vw;
+    margin: 0px 0px 20px 0px;
+}
+
+.sub-pages#pets{
+    background: #fdfbe0;
+}
+
+.sub-pages#recipes{
+    background: #fdf4e0;
+}
+
+.sub-pages#travel{
+    background: #eaf5fd;
+}
+
+.sub-pages h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 1vh 0;
+}
+
+.sub-pages p {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 1vh 0;
+}
+
+
+
+.dynamic-background {
+    background-color: #006677;
+    animation: accessibleJoyfulTransition 20s infinite ease-in-out;
+    width: 100vw;
+    /* height: calc(100vh - 50px); */
+    height: 70vh;
+    color: white;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    padding: 5vw; 
+    box-sizing: border-box;
+}
+
+@keyframes accessibleJoyfulTransition {
+    0%, 100% {background-color: #006677;}
+    20% {background-color: #008855;}
+    40% {background-color: #224477;}
+    60% {background-color: #aa6600;}
+    80% {background-color: #B81757;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dynamic-background {
+        animation: none; 
+        background-color: #006677; 
+    }
+}
+
+.dynamic-background h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    line-height: 1.15;
+}
+
+.dynamic-background p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.footer-container {
+    display: flex;
+    /* justify-content: center;  */
+    align-items: center; 
+    height: 30px;
+    padding: 10px 0;
+    color: #666666;
+    margin: 20px 5vw 10px 5vw
+}
+
+
+
+/* Pets namecard */
+.pet-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr; 
+    gap: 20px; 
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px 20px 30px 20px;
+    border-radius: 20px;
+    max-width: 100%; 
+    /* margin: 20px 5vw; */
+    /* max-width: 450px; */
+}
+
+.pet-photo img {
+    width: 85%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.pet-photo {
+    display: flex;
+    justify-content: center; 
+    /* align-items: center;  */
+}
+
+.pet-name {
+    font-size: 18px;
+    font-style: italic;
+    color: #555555;
+    text-align: center;
+}
+
+.pet-info {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto auto 1fr;
+    row-gap: 10px;
+    column-gap: 20px; 
+    max-width: 100%; 
+    color: #222222;
+    font-size: 18px;
+}
+
+.pet-info span:last-child{
+    line-height: 1.2;
+    padding: 0 0 5px 0;
+}
+
+.info-item {
+    display: contents;
+}
+
+.info-item span:first-child {
+    font-weight: 600; 
+}
+
+.info-item span:last-child {
+   font-weight: 400;
+   color: #555555;
+}
+
+.pets-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    padding: 5px;
+    margin: 20px 5vw;
+}
+
+
+
+@media (min-width: 1450px) { 
+    .pets-container {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media (min-width: 1050px) and (max-width: 1449px) { 
+    .pets-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1049px) { 
+    .pets-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 749px) { 
+    .pets-container {
+        max-width: 400px;
+    }
+}
+
+
+/* receipies */
+
+.recipes-card {
+    display: grid;
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 20px 5vw;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.recipes-card img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px;
+}
+
+.recipes-card h2 {
+    font-size: 23px;
+    color: #222222;
+    text-align: center;
+    font-weight: 600;
+    margin: 8px 0px 3px 0px;
+    padding: 3px;
+    background-color: #ffee01;
+}
+
+.recipes-card h3 {
+    text-align: left; 
+    color: #666666;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.recipes-card li {
+    margin-bottom: 10px; 
+    color: #222222;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+
+
+/* Travel */
+
+.travel-card {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 20px 5vw;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+}
+
+.images img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px;
+}
+
+.travel-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    grid-template-rows: auto auto 1fr;
+    row-gap: 10px;
+    column-gap: 20px; 
+    max-width: 100%; 
+    color: #222222;
+    font-size: 18px;
+}
+
+.travel-card p {
+    color: #222222;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.travel-card h2 {
+    font-size: 23px;
+    color: #222222;
+    text-align: left;
+    font-weight: 600;
+    margin: 8px 0px 3px 0px;
+    padding: 3px;
+}
+
+
+
+
